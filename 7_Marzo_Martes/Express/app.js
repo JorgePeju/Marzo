@@ -22,15 +22,24 @@ app.get('/', (req, res) => {
 })
 
 app.get('/productos', (req, res) => {
-    res.render({})
+    res.render('index',{
+        titulo:'Me gustan los productos' ,
+        parrafo: 'No me gustan las cosas',
+        })
 })
 
 app.get('/quienesSomos', (req, res) => {
-    res.render('<h1>Quienes somos?</h1>')
+    res.render('quienesSomos',{
+        titulo:'Me gusta quienes somos' ,
+        parrafo: 'No me gustan las cosas',
+        })
 })
 
 app.get('/contacto', (req, res) => {
-    res.render('<h1>Estamos en contacto</h1>')
+    res.render('contacto',{
+        titulo:'Me gustan el contacto' ,
+        parrafo: 'No me gustan las cosas',
+        })
 })
 
 // Chasqueador
