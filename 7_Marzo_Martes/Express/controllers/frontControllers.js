@@ -8,10 +8,10 @@ const getIndex = (req, res) => {
 };
 
 const getProductos = (req, res) => {
-    res.render('/productos', {
-        titulo: 'Me gustan los productos',
+    res.render('productos',{
+        titulo:'Me gusta los productos' ,
         parrafo: 'No me gustan las cosas',
-    })
+        })
 };
 
 const getQuienesSomos = (req, res) => {
