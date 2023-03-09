@@ -1,6 +1,6 @@
 const {Schema, model} = require('mongoose');
 
-const ServicioSchema = new Schema ({
+const InstalacionesSchema = new Schema ({
 
     nombre:String,
     descripcion:{
@@ -12,4 +12,4 @@ const ServicioSchema = new Schema ({
     },
 })
 
-module.exports=model('Servicio', ServicioSchema)
+module.exports=model('Instalaciones', InstalacionesSchema)

@@ -1,14 +1,18 @@
 const express = require('express');
-const { route } = require('./routers/routerFront');
+const cors = require('cors')
+const {route} = require('./routers/routerFront');
 
-const {conexion} = require('./helpers/dbConect')
+const {conexion} = require('./helpers/dbConect');
+
+//conectar dotenv
+require('dotenv').config()
 
 // configurar servidor
 const app = express()
 
 const port = process.env.PORT || 3000;
 
-
+// console.log(process)  // console.log(process.env.URI_CONECT)
 
 app.use(express.static('public'));
 

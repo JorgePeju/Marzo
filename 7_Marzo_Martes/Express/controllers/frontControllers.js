@@ -1,9 +1,5 @@
 const Servicio = require('../models/servicioModel');
-
-
-
-
-
+const Instalaciones = require('../models/instalacionesModel');
 
 const getIndex = (req, res) => {
     res.render('index', {
@@ -33,39 +29,34 @@ const getContacto = (req, res) => {
     })
 };
 
-// const getServicios = (req, res) => {
-//     res.render('servicios',{
-//         titulo:'Me gustan los servicios' ,
-//         parrafo: 'No me gustan las cosas',
-//         })
-// };
-
-
-
-// dentro de lo que queramos llamar
-// Servicio.find((error, servicios) => {
-
-//     if (error) {
-//     return res.send('este es el error', {
-//         ok:false,
-//         msg:'Error al contactar',
-//     }else{
-
-//     } )    
-//     }
-// })
-
-
 const getServicios = async (req, res) => {
 
-
     try {
-        const servicios = await Servicio.find(
-                res.render('servicios', {
+        const servicios = await Servicio.find()
+            res.render('servicios', {
                 titulo: 'Me gustan los servicios',
                 parrafo: 'No me gustan las cosas',
+                servicios,
+                
             })
-        )
+        
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const getInstalaciones = async (req, res) => {
+
+    try {
+        const instalaciones = await Instalaciones.find()
+                res.render('instalaciones', {
+                titulo: 'Instalamos cosas',
+                parrafo: 'No me gustan las instalaciones',
+                instalaciones,
+            })
+        
+
     } catch (error) {
         console.log(error)
     }
@@ -73,12 +64,11 @@ const getServicios = async (req, res) => {
 
 }
 
-
-
 module.exports = {
     getIndex,
     getProductos,
     getQuienesSomos,
     getContacto,
     getServicios,
+    getInstalaciones,
 }
