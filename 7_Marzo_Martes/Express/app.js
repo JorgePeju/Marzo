@@ -1,6 +1,8 @@
 const express = require('express');
 const { route } = require('./routers/routerFront');
 
+const {conexion} = require('./helpers/dbConect')
+
 // configurar servidor
 const app = express()
 
@@ -15,6 +17,11 @@ app.use(express.static('public'));
 app.set('view engine' , 'ejs');
 // Estableder cual va a ser la carpeta de vistas
 app.set("views",__dirname + "/views");
+
+
+// CONEXION ///
+
+conexion()
 
 
 // rutas
