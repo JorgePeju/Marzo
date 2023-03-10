@@ -1,0 +1,15 @@
+{
+  "name": "scraping",
+  "version": "1.0.0",
+  "description": "Scrapear",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script.js "
+  },
+  "author": "TA's preferidos",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.7.3"
+  }
+}
